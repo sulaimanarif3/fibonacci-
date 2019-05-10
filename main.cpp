@@ -4,22 +4,32 @@ using namespace std;
 
 int main()
 {
-    int n,i,f1=0,f2=1,f3;
-    cout<<"enter the number of terms of fibonachi series you want"<<endl;
-    cin>> n;
-    cout<<"first "<<n<<" terms of fiboanchi series are :-"<<endl;
-    for(i=0;i<=n;i++)
+int arr[100],x,i,j,temp;
+    cout<<"enter size of array: ";
+    cin>>x;
+    cout<<"enter elements in array: ";
+    for(i=0;i<x;i++)
     {
-        if(i<=1)
-            f3=i;
-        else
+        cin>>arr[i];
+    }
+    for(i=0;i<x;i++)
+    {
+        for(j=i+1;j<x;j++)
         {
-            f3=f1+f2;
-            f1=f2;
-            f2=f3;
+            if(arr[j]<arr[i])
+            {
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+
+
+            }
         }
-        cout<<f3<<endl;
+    }
+    cout<<"arranged:"<<endl;
+    for(i=0;i<x;i++)
+    {
+        cout<<arr[i]<<endl;
     }
     return 0;
 }
-
